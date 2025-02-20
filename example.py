@@ -1,11 +1,15 @@
-import openai
+from openai import OpenAI
+client = OpenAI()
 
-client = openai.OpenAI()
-
-# Use the updated API method
-response = client.chat.completions.create(
-    model="gpt-4",
-    messages=[{"role": "user", "content":'Give me 10 indian boys names'}]
+completion = client.chat.completions.create(
+    model="gpt-4o-mini",
+    messages=[
+        {"role": "system", "content": "You are a helpful assistant."},
+        {
+            "role": "user",
+            "content": "write about c programming"
+        }
+    ]
 )
 
-print(response.choices[0].message.content)
+print(completion.choices[0].message.content)
