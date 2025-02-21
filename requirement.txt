@@ -1,0 +1,6 @@
+pip install langchain
+pip install pinecone-client
+pip install pypdf
+pip install openai
+pip install tiktoken
+pip install langchain-community
